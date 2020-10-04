@@ -30,15 +30,15 @@ module.exports = function(context) {
     const {googleAdsense} = themeConfig || {};
 
     if(!googleAdsense) {
-        throw new Error(
-            `You need to specify 'googleAdsense' object in 'themeConfig' with 'dataAdClinet' field in it to use docusaurus-plugin-google-adsense`,
+        throw new Error (
+            'You need to specify `googleAdsense` object in `themeConfig` with `dataAdClient` field in it to use docusaurus-plugin-google-adsense',
           );
     }
 
     const {dataAdClient} = googleAdsense;
 
     if (!dataAdClient) {
-        throw new Error(
+        throw new Error (
           'You specified the `googleAdsense` object in `themeConfig` but the `dataAdClient` field was missing. ' +
             'Please ensure this is not a mistake.',
         );
@@ -47,7 +47,7 @@ module.exports = function(context) {
     const isProd = process.env.NODE_ENV === 'production';
 
     return {
-        name: "docusaurus-plugin-google-adsense",
+        name: 'docusaurus-plugin-google-adsense',
 
         getClientModules() {
             return isProd ? [path.resolve(__dirname, './adsense')] : [];
@@ -60,13 +60,13 @@ module.exports = function(context) {
             return {
                 headTags: [
                     {
-                        tagName: "script",
+                        tagName: 'script',
                         attributes: {
-                            "data-ad-client": dataAdClient,
+                            'data-ad-client': dataAdClient,
                             async: true,
-                            src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-                        }
-                    }
+                            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+                        },
+                    },
                 ],
             };
         },
