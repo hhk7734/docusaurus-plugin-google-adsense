@@ -62,10 +62,10 @@ module.exports = function(context) {
                     {
                         tagName: 'script',
                         attributes: {
-                            'data-ad-client': dataAdClient,
                             async: true,
-                            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-                        },
+                            src: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${dataAdClient}`,
+                            "crossorigin": "anonymous",
+                        }
                     },
                 ],
             };
