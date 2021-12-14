@@ -49,10 +49,6 @@ module.exports = function (context) {
   return {
     name: 'docusaurus-plugin-google-adsense',
 
-    getClientModules() {
-      return isProd ? [path.resolve(__dirname, './adsense')] : [];
-    },
-
     injectHtmlTags() {
       if (!isProd) {
         return {};
