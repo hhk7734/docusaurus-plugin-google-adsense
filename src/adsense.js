@@ -24,13 +24,13 @@
 
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
-export default (function() {
+export default (function () {
   if (!ExecutionEnvironment.canUseDOM) {
     return null;
   }
 
   return {
-    onRouteUpdate({location}) {
+    onRouteUpdate({ location }) {
       // Set page so that subsequent hits on this page are attributed
       // to this page. This is recommended for Single-page Applications.
       window.ga('set', 'page', location.pathname);
