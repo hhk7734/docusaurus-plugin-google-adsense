@@ -11,18 +11,27 @@ This plugin is for Docusaurus v2.
 Run `yarn add -D docusaurus-plugin-google-adsense`.
 
 Modify `docusaurus.config.js`:
+
 ```javascript
 module.exports = {
   //...
   themeConfig: {
     //...
     googleAdsense: {
-      dataAdClient: "ca-pub-xxxxxxxxxx",
+      dataAdClient: 'ca-pub-xxxxxxxxxx',
     },
   },
 
-  plugins: [
-    'docusaurus-plugin-google-adsense',
-  ],
+  plugins: ['docusaurus-plugin-google-adsense'],
 };
+```
+
+## Publish
+
+```shell
+npm login
+```
+
+```shell
+npm publish
 ```
