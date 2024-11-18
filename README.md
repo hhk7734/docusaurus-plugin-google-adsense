@@ -20,13 +20,13 @@ Modify `docusaurus.config.ts`:
 import type { Config } from "@docusaurus/types";
 
 const config: Config = {
-	plugins: ['docusaurus-plugin-google-adsense'],
+  plugins: ['docusaurus-plugin-google-adsense'],
 
-	themeConfig: {
-		googleAdsense: {
-			dataAdClient: 'ca-pub-xxxxxxxxxx',
-		},
-	},
+  themeConfig: {
+    googleAdsense: {
+      dataAdClient: 'ca-pub-xxxxxxxxxx',
+    },
+  },
 };
 
 export default config;
@@ -51,35 +51,35 @@ import AdSense from "react-adsense";
 type Props = WrapperProps<typeof ContentType>;
 
 export default function ContentWrapper(props: Props): JSX.Element {
-	return (
-		<>
-			<div>
-				<AdSense.Google
-					client="ca-pub-5199357432848758"
-					slot="5326538900"
-					style={{ display: "block" }}
-					format="auto"
-					responsive="true"
-				/>
-			</div>
+  return (
+    <>
+      <div>
+        <AdSense.Google
+          client="ca-pub-xxxxxxxxxx"
+          slot="yyyyyyyyyy"
+          style={{ display: "block" }}
+          format="auto"
+          responsive="true"
+        />
+      </div>
 
-			<br />
+      <br />
 
-			<Content {...props} />
+      <Content {...props} />
 
-			<br />
+      <br />
 
-			<div>
-				<AdSense.Google
-					client="ca-pub-5199357432848758"
-					slot="5326538900"
-					style={{ display: "block" }}
-					format="auto"
-					responsive="true"
-				/>
-			</div>
-		</>
-	);
+      <div>
+        <AdSense.Google
+          client="ca-pub-xxxxxxxxxx"
+          slot="yyyyyyyyyy"
+          style={{ display: "block" }}
+          format="auto"
+          responsive="true"
+        />
+      </div>
+    </>
+  );
 }
 ```
 
