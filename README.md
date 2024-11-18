@@ -4,26 +4,83 @@
 
 # docusaurus-plugin-google-adsense
 
-This plugin is for Docusaurus v2.
+This plugin is for Docusaurus v2 and v3.
+
+## Installation
+
+```shell
+yarn add docusaurus-plugin-google-adsense
+```
 
 ## Usage
 
-Run `yarn add -D docusaurus-plugin-google-adsense`.
+Modify `docusaurus.config.ts`:
 
-Modify `docusaurus.config.js`:
+```ts
+import type { Config } from "@docusaurus/types";
 
-```javascript
-module.exports = {
-  //...
-  themeConfig: {
-    //...
-    googleAdsense: {
-      dataAdClient: 'ca-pub-xxxxxxxxxx',
-    },
-  },
+const config: Config = {
+	plugins: ['docusaurus-plugin-google-adsense'],
 
-  plugins: ['docusaurus-plugin-google-adsense'],
+	themeConfig: {
+		googleAdsense: {
+			dataAdClient: 'ca-pub-xxxxxxxxxx',
+		},
+	},
 };
+
+export default config;
+```
+
+[Swizzle](https://docusaurus.io/docs/swizzling) `DocItem/Content`
+
+```shell
+yarn swizzle @docusaurus/theme-classic DocItem/Content --wrap
+```
+
+Modify `src/theme/DocItem/Content/index.tsx` like this:
+
+```tsx
+import React from "react";
+import Content from "@theme-original/DocItem/Content";
+import type ContentType from "@theme/DocItem/Content";
+import type { WrapperProps } from "@docusaurus/types";
+
+import AdSense from "react-adsense";
+
+type Props = WrapperProps<typeof ContentType>;
+
+export default function ContentWrapper(props: Props): JSX.Element {
+	return (
+		<>
+			<div>
+				<AdSense.Google
+					client="ca-pub-5199357432848758"
+					slot="5326538900"
+					style={{ display: "block" }}
+					format="auto"
+					responsive="true"
+				/>
+			</div>
+
+			<br />
+
+			<Content {...props} />
+
+			<br />
+
+			<div>
+				<AdSense.Google
+					client="ca-pub-5199357432848758"
+					slot="5326538900"
+					style={{ display: "block" }}
+					format="auto"
+					responsive="true"
+				/>
+			</div>
+		</>
+	);
+}
 ```
 
 ## Publish
