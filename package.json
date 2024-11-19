@@ -1,30 +1,30 @@
 {
-  "name": "docusaurus-plugin-google-adsense",
-  "version": "0.3.1",
-  "description": "Google adsense plugin for Docusaurus",
-  "contributors": [
-    {
-      "name": "Seungwoo Hong",
-      "email": "qksn1541@gmail.com"
-    },
-    {
-      "name": "Hyeonki Hong",
-      "email": "hhk7734@gmail.com"
-    }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hhk7734/docusaurus-plugin-google-adsense.git"
-  },
-  "main": "src/index.js",
-  "publishConfig": {
-    "access": "public"
-  },
-  "license": "MIT",
-  "peerDependencies": {
-    "@docusaurus/core": "^2.0.0"
-  },
-  "engines": {
-    "node": ">=10.9.0"
-  }
+	"name": "docusaurus-plugin-google-adsense",
+	"version": "0.3.2",
+	"description": "Google adsense plugin for Docusaurus",
+	"contributors": [
+		{
+			"name": "Seungwoo Hong",
+			"email": "qksn1541@gmail.com"
+		},
+		{
+			"name": "Hyeonki Hong",
+			"email": "hhk7734@gmail.com"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hhk7734/docusaurus-plugin-google-adsense.git"
+	},
+	"main": "src/index.js",
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "MIT",
+	"peerDependencies": {
+		"@docusaurus/core": ">=2.0.0 <4.0.0"
+	},
+	"engines": {
+		"node": ">=10.9.0"
+	}
 }
